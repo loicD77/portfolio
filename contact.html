@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio de Loïc Darras</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="header-container">
+            <div class="header-title">
+                <h1>Contact</h1>
+                <p>Restons en contact !</p>
+            </div>
+            <div class="header-photo">
+                <img src="assets/images/loic-photo.png" alt="Photo de Loïc Darras">
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="experience.html">Expériences</a></li>
+                <li><a href="studies.html">Études</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+        <section id="contact">
+            <h2>Me contacter</h2>
+            <p>N’hésitez pas à me contacter pour toute demande d’information ou opportunité professionnelle.</p>
+
+            <div class="contact-info">
+                <ul>
+                    <li>
+                        <img src="assets/images/email.png" alt="Email">
+                        <a href="mailto:loic.darras@example.com">loic.darras@example.com</a>
+                    </li>
+                    <li>
+                        <img src="assets/images/linkedin.png" alt="LinkedIn">
+                        <a href="https://linkedin.com/in/loicdarras" target="_blank">LinkedIn : Mon profil</a>
+                    </li>
+                    <li>
+                        <img src="assets/images/github.png" alt="GitHub">
+                        <a href="https://github.com/loicD77" target="_blank">GitHub : Mes projets</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Formulaire de contact -->
+            <h3>Envoyez-moi un message</h3>
+            <form action="mailto:loic.darras@example.com" method="post" enctype="text/plain">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2025 Loïc Darras. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
