@@ -320,3 +320,49 @@ footer {
     background-color: #c12707;
     transform: scale(1.05);
 }
+
+
+.cv-download {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cv-download .button {
+    background-color: #e12f08;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    margin: 5px;
+}
+
+.cv-download .button:hover {
+    background-color: #c12707;
+    transform: scale(1.05);
+}
+
+
+.top-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.top-buttons .button {
+    background-color: #e12f08;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    margin: 5px;
+}
+
+.top-buttons .button:hover {
+    background-color: #c12707;
+    transform: scale(1.05);
+}
