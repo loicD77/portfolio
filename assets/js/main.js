@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        setInterval(createSmokeEffect, 5000);
+        setInterval(createSmokeEffect, 1000);
     } else {
         console.warn("❌ GSAP n'est pas chargé. Vérifiez l'inclusion de la bibliothèque.");
     }

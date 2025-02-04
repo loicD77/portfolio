@@ -426,29 +426,29 @@ footer {
         transform: translateX(-50%) translateY(-30px) scale(1.2);
     }
 }
-
 /* Conteneur de la fumée */
 .steam {
     position: absolute;
-    width: 80px; /* Ajusté à la taille de la tasse */
-    height: 120px;
-    top: -60px; /* Place la fumée juste au-dessus de la tasse */
+    width: 60px; /* Rendre la fumée plus fine */
+    height: 100px;
+    top: -50px; /* Ajusté pour bien placer au-dessus de la tasse */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none; /* La fumée ne bloque pas d'actions */
-    overflow: visible; /* Permet à la fumée de sortir */
+    pointer-events: none;
+    overflow: visible;
 }
 
-/* Fumée tourbillonnante */
+/* ✅ Fumée plus fine et couleur marron */
 .smoke {
     position: absolute;
-    width: 15px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.8); /* Augmente l'opacité */
+    bottom: 0;
+    width: 15px; /* Réduction de la largeur pour un effet plus subtil */
+    height: 60px; /* Hauteur ajustée */
+    background: rgba(139, 69, 19, 0.7); /* Marron (chocolat) semi-transparent */
     border-radius: 50%;
-    filter: blur(8px); /* Ajoute un effet de flou pour la rendre plus réaliste */
-    opacity: 0; /* Au début, elle est invisible */
+    opacity: 0;
+    filter: blur(6px); /* Légère diffusion pour l'effet vapeur */
 }
