@@ -366,3 +366,89 @@ footer {
     background-color: #c12707;
     transform: scale(1.05);
 }
+
+/* Conteneur principal du café */
+.coffee-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 120px;
+    height: 150px;
+}
+
+/* La tasse */
+.cup {
+    width: 80px;
+    height: 60px;
+    background: #c0c0c0;
+    border-radius: 0 0 40px 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Anse de la tasse */
+.cup-handle {
+    width: 25px;
+    height: 30px;
+    border: 5px solid #c0c0c0;
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    border-radius: 50%;
+}
+
+/* Assiette sous la tasse */
+.plate {
+    width: 100px;
+    height: 10px;
+    background: #b0b0b0;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Animation de la fumée */
+@keyframes steam-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px) scale(1.2);
+    }
+}
+
+/* Conteneur de la fumée */
+.steam {
+    position: absolute;
+    width: 80px; /* Ajusté à la taille de la tasse */
+    height: 120px;
+    top: -60px; /* Place la fumée juste au-dessus de la tasse */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* La fumée ne bloque pas d'actions */
+    overflow: visible; /* Permet à la fumée de sortir */
+}
+
+/* Fumée tourbillonnante */
+.smoke {
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8); /* Augmente l'opacité */
+    border-radius: 50%;
+    filter: blur(8px); /* Ajoute un effet de flou pour la rendre plus réaliste */
+    opacity: 0; /* Au début, elle est invisible */
+}
