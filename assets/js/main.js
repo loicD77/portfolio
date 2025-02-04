@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Animations GSAP chargées !");
-    
+    console.log("✅ Animations GSAP chargées !");
+
     /** 🌟 Animation du Header **/
     gsap.from(".header-title h1", {
         opacity: 0,
@@ -27,27 +27,44 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 0.8
     });
 
-    /** 🎥 **Diaporama avec GSAP** **/
+    /** 🎥 **Diaporama GSAP corrigé** **/
     let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
+    const slides = document.querySelectorAll("#slideshow-container .slide");
 
-    function showSlides() {
-        slides.forEach((slide, i) => {
-            gsap.to(slide, { 
-                opacity: i === slideIndex ? 1 : 0, 
-                scale: i === slideIndex ? 1 : 0.9, 
-                duration: 1 
+    if (slides.length > 0) {
+        function showSlides() {
+            slides.forEach((slide, i) => {
+                if (i === slideIndex) {
+                    gsap.to(slide, { 
+                        opacity: 1, 
+                        scale: 1, 
+                        zIndex: 2, 
+                        duration: 1, 
+                        display: "block"
+                    });
+                } else {
+                    gsap.to(slide, { 
+                        opacity: 0, 
+                        scale: 0.9, 
+                        zIndex: 1, 
+                        duration: 1, 
+                        display: "none" 
+                    });
+                }
             });
-        });
 
-        slideIndex = (slideIndex + 1) % slides.length;
-        setTimeout(showSlides, 4000);
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 4000); // ✅ Défilement toutes les 4 secondes
+        }
+
+        // ✅ Réinitialisation correcte des slides avant le lancement
+        gsap.set(slides, { opacity: 0, scale: 0.9, display: "none", zIndex: 1 });
+        gsap.set(slides[0], { opacity: 1, scale: 1, display: "block", zIndex: 2 });
+
+        setTimeout(showSlides, 1000); // ✅ Ajout d'un délai au début pour éviter un bug d'affichage
+    } else {
+        console.warn("❌ Aucune slide trouvée !");
     }
-
-    gsap.set(slides, { opacity: 0, scale: 0.9 });
-    gsap.set(slides[0], { opacity: 1, scale: 1 });
-
-    showSlides();
 
     /** 🌀 Effet Parallax sur l'image de profil **/
     gsap.to(".header-photo img", {
@@ -89,13 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    console.log("Animations chargées avec succès.");
+    console.log("✅ Animations chargées avec succès.");
 
     /** ☕ Animation de la tasse de café avec Fumée Tourbillonnante **/
-
-    // Vérifie si GSAP est bien chargé
     if (typeof gsap !== "undefined") {
-        // Animation d'apparition de la tasse
         gsap.from(".coffee-container", {
             opacity: 0,
             y: 30,
@@ -103,56 +117,47 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out"
         });
 
-function createSmokeEffect() {
-    const smokeContainer = document.querySelector(".steam");
+        function createSmokeEffect() {
+            const smokeContainer = document.querySelector(".steam");
 
-    if (!smokeContainer) {
-        console.warn("❌ Conteneur de fumée non trouvé !");
-        return;
-    }
+            if (!smokeContainer) {
+                console.warn("❌ Conteneur de fumée non trouvé !");
+                return;
+            }
 
-    // Créer un nouvel élément pour la fumée
-    const smoke = document.createElement("span");
-    smoke.classList.add("smoke");
-    smokeContainer.appendChild(smoke);
+            for (let i = 0; i < 3; i++) { // 🔥 Génère 3 fumées en même temps
+                const smoke = document.createElement("span");
+                smoke.classList.add("smoke");
+                smokeContainer.appendChild(smoke);
 
-    console.log("✅ Fumée créée !");
+                console.log(`✅ Fumée ${i + 1} créée !`);
 
-    // Nouvelle animation avec GSAP
-    gsap.fromTo(smoke, 
-        { 
-            opacity: 0, 
-            y: 10, 
-            scale: 0.5, 
-            rotation: gsap.utils.random(-20, 20), 
-            x: gsap.utils.random(-5, 5) 
-        }, 
-        { 
-            opacity: 1, 
-            y: -100, 
-            scale: 1.5, 
-            rotation: gsap.utils.random(180, 360), 
-            x: gsap.utils.random(-15, 15),
-            duration: 4, 
-            ease: "power1.out",
-            onComplete: () => {
-                gsap.to(smoke, { opacity: 0, duration: 1, onComplete: () => smoke.remove() });
+                gsap.fromTo(smoke, 
+                    { 
+                        opacity: 0, 
+                        y: 10, 
+                        scale: gsap.utils.random(0.5, 1), 
+                        rotation: gsap.utils.random(-20, 20), 
+                        x: gsap.utils.random(-10, 10) 
+                    }, 
+                    { 
+                        opacity: 1, 
+                        y: gsap.utils.random(-100, -150), 
+                        scale: gsap.utils.random(1.2, 1.8), 
+                        rotation: gsap.utils.random(180, 360), 
+                        x: gsap.utils.random(-20, 20),
+                        duration: 5, 
+                        ease: "power1.out",
+                        onComplete: () => {
+                            gsap.to(smoke, { opacity: 0, duration: 1, onComplete: () => smoke.remove() });
+                        }
+                    }
+                );
             }
         }
-    );
-}
 
-// Lancer l’effet toutes les 3 secondes (pour tester plus vite)
-setInterval(createSmokeEffect, 3000);
-
-
-// Lancer l'effet toutes les 5 secondes
-setInterval(createSmokeEffect, 5000);
-
-
-        // Lancer l'effet toutes les 5 secondes
         setInterval(createSmokeEffect, 5000);
     } else {
-        console.warn("GSAP n'est pas chargé. Vérifiez l'inclusion de la bibliothèque.");
+        console.warn("❌ GSAP n'est pas chargé. Vérifiez l'inclusion de la bibliothèque.");
     }
 });
