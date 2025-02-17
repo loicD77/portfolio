@@ -151,6 +151,7 @@ footer {
 
 /* Diaporama */
 .slideshow-container {
+       margin-bottom: 80px;
     position: relative;
     max-width: 100%;
     height: 400px;
@@ -371,12 +372,12 @@ footer {
 }
 /* ✅ Conteneur principal de la tasse (fixé pour PC, adaptatif pour mobile) */
 .coffee-container {
-    position: fixed; /* ✅ Toujours fixé à l’écran */
-    bottom: 0; /* ✅ Toujours collé en bas de l’écran */
+    position: fixed;
+    bottom: 2%; /* ✅ Fixe la tasse en bas de l’écran */
     left: 5%;
     width: 120px;
     height: 150px;
-    z-index: 1000; /* ✅ Au-dessus des autres éléments */
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -396,11 +397,12 @@ footer {
         position: relative; /* ✅ Désactive la position fixe */
         bottom: auto;
         left: auto;
-        margin: 20px auto; /* ✅ Centre la tasse */
+        margin: 30px auto; /* ✅ Centre la tasse */
         width: 100px;
         height: 120px;
         display: flex;
         justify-content: center;
+        margin-top: 80px; /* ✅ Descend la tasse plus bas */
     }
 }
 
@@ -440,7 +442,7 @@ footer {
 .steam {
     position: absolute;
     width: 50px;
-    height: 100px;
+    height: 110px;
     top: -60px;
     left: 50%;
     transform: translateX(-50%);
@@ -455,8 +457,8 @@ footer {
 .smoke {
     position: absolute;
     bottom: 0;
-    width: 15px;
-    height: 60px;
+    width: 10px;
+    height: 6px;
     background: rgba(139, 69, 19, 0.7); /* Marron semi-transparent */
     border-radius: 50%;
     opacity: 0;
@@ -469,6 +471,7 @@ footer {
         width: 80px;
         height: 100px;
         margin: 15px auto;
+         margin-top: 80px;
     }
 
     .cup {
