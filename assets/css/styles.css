@@ -54,6 +54,8 @@ main {
 
 /* Section : Projets */
 #projects ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -272,6 +274,7 @@ footer {
 
 /* Navbar */
 .navbar {
+    display: grid;
     background: #e12f08;
     padding: 10px 0;
 }
@@ -369,6 +372,8 @@ footer {
 
 /* Conteneur principal du café */
 .coffee-container {
+    display: flex;
+    align-items: flex-start;
     position: absolute;
     bottom: 50px;
     left: 50px;
@@ -412,6 +417,9 @@ footer {
 }
 
 
+
+
+
 /* Animation de la fumée */
 @keyframes steam-animation {
     0% {
@@ -451,4 +459,25 @@ footer {
     border-radius: 50%;
     opacity: 0;
     filter: blur(6px); /* Légère diffusion pour l'effet vapeur */
+}
+
+
+/* ✅ 📱 Sur petit écran (max 768px), chaque élément prend 6 colonnes */
+@media (max-width: 768px) {
+    .navbar ul {
+        grid-template-columns: repeat(6, 1fr); /* 6 colonnes */
+    }
+    .navbar ul li {
+        grid-column: span 3; /* 🌟 Maintenant chaque item prend 3 colonnes */
+    }
+}
+
+/* ✅ 📱 Sur mobile (max 480px), chaque élément prend toute la largeur */
+@media (max-width: 480px) {
+    .navbar ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    }
+    .navbar ul li {
+        grid-column: span 3; /* 🌟 Chaque élément prend toute la largeur */
+    }
 }
