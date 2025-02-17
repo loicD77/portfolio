@@ -402,7 +402,13 @@ footer {
         height: 120px;
         display: flex;
         justify-content: center;
-        margin-top: 80px; /* ✅ Descend la tasse plus bas */
+        margin-top: 230px; /* ✅ Descend la tasse plus bas */
+    }
+
+
+    #about{
+
+        margin-top: 150px;
     }
 }
 
@@ -471,7 +477,7 @@ footer {
         width: 80px;
         height: 100px;
         margin: 15px auto;
-         margin-top: 80px;
+         margin-top: 250px;
     }
 
     .cup {
@@ -500,5 +506,10 @@ footer {
     .smoke {
         width: 12px;
         height: 50px;
+    }
+
+    #about{
+
+        margin-top: 50px;
     }
 }
