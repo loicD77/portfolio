@@ -369,31 +369,52 @@ footer {
     background-color: #c12707;
     transform: scale(1.05);
 }
-
-/* Conteneur principal du café */
+/* ✅ Conteneur principal de la tasse (fixé pour PC, adaptatif pour mobile) */
 .coffee-container {
-    display: flex;
-    align-items: flex-start;
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
+    position: fixed; /* ✅ Toujours fixé à l’écran */
+    bottom: 0; /* ✅ Toujours collé en bas de l’écran */
+    left: 5%;
     width: 120px;
     height: 150px;
+    z-index: 1000; /* ✅ Au-dessus des autres éléments */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* La tasse */
+/* ✅ Empêche le déplacement sur PC */
+@media (min-width: 1025px) {
+    .coffee-container {
+        left: 5%;
+        bottom: 0;
+    }
+}
+
+/* ✅ Pour mobiles et tablettes : entre diapo et "À propos" */
+@media (max-width: 1024px) {
+    .coffee-container {
+        position: relative; /* ✅ Désactive la position fixe */
+        bottom: auto;
+        left: auto;
+        margin: 20px auto; /* ✅ Centre la tasse */
+        width: 100px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* ✅ Tasse */
 .cup {
     width: 80px;
     height: 60px;
     background: #c0c0c0;
     border-radius: 0 0 40px 40px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    position: relative;
     box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Anse de la tasse */
+/* ✅ Anse de la tasse */
 .cup-handle {
     width: 25px;
     height: 30px;
@@ -404,80 +425,77 @@ footer {
     border-radius: 50%;
 }
 
-/* Assiette sous la tasse */
+/* ✅ Assiette sous la tasse */
 .plate {
     width: 100px;
     height: 10px;
     background: #b0b0b0;
-    position: absolute;
-    bottom: 0;
-    left: 10px;
+    position: relative;
+    margin-top: -10px; /* ✅ Alignement parfait avec la tasse */
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
-/* Animation de la fumée */
-@keyframes steam-animation {
-    0% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(10px) scale(0.8);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-30px) scale(1.2);
-    }
-}
-/* Conteneur de la fumée */
+/* ✅ Conteneur de la fumée */
 .steam {
     position: absolute;
-    width: 60px; /* Rendre la fumée plus fine */
+    width: 50px;
     height: 100px;
-    top: -50px; /* Ajusté pour bien placer au-dessus de la tasse */
+    top: -60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
     overflow: visible;
+    z-index: 1000;
 }
 
-/* ✅ Fumée plus fine et couleur marron */
+/* ✅ Fumée plus fine et responsive */
 .smoke {
     position: absolute;
     bottom: 0;
-    width: 15px; /* Réduction de la largeur pour un effet plus subtil */
-    height: 60px; /* Hauteur ajustée */
-    background: rgba(139, 69, 19, 0.7); /* Marron (chocolat) semi-transparent */
+    width: 15px;
+    height: 60px;
+    background: rgba(139, 69, 19, 0.7); /* Marron semi-transparent */
     border-radius: 50%;
     opacity: 0;
-    filter: blur(6px); /* Légère diffusion pour l'effet vapeur */
+    filter: blur(6px);
 }
 
-
-/* ✅ 📱 Sur petit écran (max 768px), chaque élément prend 6 colonnes */
+/* ✅ Plus petite tasse et fumée sur mobiles */
 @media (max-width: 768px) {
-    .navbar ul {
-        grid-template-columns: repeat(6, 1fr); /* 6 colonnes */
+    .coffee-container {
+        width: 80px;
+        height: 100px;
+        margin: 15px auto;
     }
-    .navbar ul li {
-        grid-column: span 3; /* 🌟 Maintenant chaque item prend 3 colonnes */
-    }
-}
 
-/* ✅ 📱 Sur mobile (max 480px), chaque élément prend toute la largeur */
-@media (max-width: 480px) {
-    .navbar ul {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    .cup {
+        width: 60px;
+        height: 40px;
     }
-    .navbar ul li {
-        grid-column: span 3; /* 🌟 Chaque élément prend toute la largeur */
+
+    .cup-handle {
+        width: 15px;
+        height: 20px;
+        right: -12px;
+        top: 5px;
+    }
+
+    .plate {
+        width: 70px;
+        margin-top: -8px;
+    }
+
+    .steam {
+        width: 40px;
+        height: 80px;
+        top: -50px;
+    }
+
+    .smoke {
+        width: 12px;
+        height: 50px;
     }
 }
