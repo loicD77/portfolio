@@ -139,7 +139,7 @@ header p {
 /* ✅ Titre des projets */
 .project strong {
     font-size: 1.4rem;
-    color: #ffd700;
+    color: black;
     display: block;
     margin-bottom: 10px;
 }
