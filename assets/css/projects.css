@@ -1,0 +1,206 @@
+/* ✅ Reset & Styles de base */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+   background-color: white;
+    line-height: 1.6;
+}
+
+/* ✅ Header */
+header {
+    text-align: center;
+    background: #e12f08;
+    color: white;
+    padding: 40px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3rem;
+}
+
+/* ✅ Retour à l'accueil */
+.back-to-home {
+    text-align: center;
+    margin: 20px;
+}
+
+.back-to-home .button {
+    background-color: #e12f08;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.back-to-home .button:hover {
+    background-color: #c12707;
+    transform: scale(1.08);
+}
+
+/* ✅ Filtre des projets */
+.project-filter {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.project-filter label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.project-filter select {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #444;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.project-filter select:hover {
+    background: #555;
+}
+
+/* ✅ Grille des projets */
+#projects-list {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+#projects-list h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* ✅ Organisation en grille */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid flexible */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ✅ Cartes des projets */
+.project {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ Effet Glow au survol */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(225, 47, 8, 0.7);
+}
+
+/* ✅ Effet Glow Animé */
+.project::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* ✅ Effet lors du hover */
+.project:hover::before {
+    opacity: 1;
+}
+
+/* ✅ Titre des projets */
+.project strong {
+    font-size: 1.4rem;
+    color: #ffd700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ✅ Description */
+.project p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* ✅ Lien GitHub */
+.project a {
+    display: inline-block;
+    text-decoration: none;
+    background: #e12f08;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.project a:hover {
+    background: #ff4500;
+    transform: scale(1.05);
+}
+
+/* ✅ Responsive : Ajuste la taille des éléments */
+@media (max-width: 768px) {
+    #projects-list {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .project {
+        padding: 15px;
+    }
+
+    .project strong {
+        font-size: 1.3rem;
+    }
+
+    .project p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ✅ Pied de page */
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
