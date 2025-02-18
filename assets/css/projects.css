@@ -1,24 +1,28 @@
 /* ✅ Reset & Styles de base */
-body {
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    color: black;
-   background-color: white;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
     line-height: 1.6;
 }
 
 /* ✅ Header */
 header {
     text-align: center;
-    background: #e12f08;
+    background: linear-gradient(135deg, #e12f08, #c12707);
     color: white;
     padding: 40px 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
@@ -33,67 +37,69 @@ header p {
 }
 
 .back-to-home .button {
-    background-color: #e12f08;
+    background: linear-gradient(135deg, #e12f08, #c12707);
     color: white;
     text-decoration: none;
     padding: 12px 24px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
     transition: 0.3s ease-in-out;
     display: inline-block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .back-to-home .button:hover {
-    background-color: #c12707;
-    transform: scale(1.08);
+    background: #ff5733;
+    transform: scale(1.05);
 }
 
 /* ✅ Filtre des projets */
 .project-filter {
     text-align: center;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .project-filter label {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #fff;
+    color: #222;
 }
 
 .project-filter select {
     font-size: 1rem;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     border: none;
-    background: #444;
-    color: #fff;
+    background: #ddd;
+    color: #222;
     outline: none;
     cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
 .project-filter select:hover {
-    background: #555;
+    background: #bbb;
 }
 
-/* ✅ Grille des projets */
+/* ✅ Liste des projets */
 #projects-list {
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 30px;
 }
 
 #projects-list h2 {
     text-align: center;
     font-size: 2rem;
-    color: #fff;
+    color: #222;
     margin-bottom: 20px;
 }
 
 /* ✅ Organisation en grille */
 #projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid flexible */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     list-style: none;
     padding: 0;
@@ -102,44 +108,25 @@ header p {
 
 /* ✅ Cartes des projets */
 .project {
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
     text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
-/* ✅ Effet Glow au survol */
+/* ✅ Effet au survol */
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(225, 47, 8, 0.7);
-}
-
-/* ✅ Effet Glow Animé */
-.project::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-}
-
-/* ✅ Effet lors du hover */
-.project:hover::before {
-    opacity: 1;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(225, 47, 8, 0.5);
 }
 
 /* ✅ Titre des projets */
 .project strong {
-    font-size: 1.4rem;
-    color: black;
+    font-size: 1.5rem;
+    color: #222;
     display: block;
     margin-bottom: 10px;
 }
@@ -147,7 +134,7 @@ header p {
 /* ✅ Description */
 .project p {
     font-size: 1rem;
-    color: #ccc;
+    color: #444;
     margin-bottom: 15px;
 }
 
@@ -157,25 +144,27 @@ header p {
     text-decoration: none;
     background: #e12f08;
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 18px;
+    border-radius: 6px;
     font-weight: bold;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
 }
 
 .project a:hover {
     background: #ff4500;
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-/* ✅ Responsive : Ajuste la taille des éléments */
+/* ✅ Responsive */
 @media (max-width: 768px) {
     #projects-list {
-        padding: 10px;
+        padding: 15px;
     }
 
     header h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     header p {
@@ -191,7 +180,7 @@ header p {
     }
 
     .project p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
 
@@ -202,5 +191,5 @@ footer {
     color: white;
     padding: 15px 0;
     font-size: 0.9rem;
-    margin-top: 20px;
+    margin-top: 30px;
 }
