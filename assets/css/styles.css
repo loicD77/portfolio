@@ -263,15 +263,21 @@ footer {
     margin-top: 5px;
 }
 
-/* Header photo */
+.header-photo {
+    position: relative; /* Permet à l'image d'être positionnée par rapport à son conteneur */
+}
+
 .header-photo img {
+    position: absolute;
+    top: -60px; /* Ajuste cette valeur pour monter l’image */
+    left: 50%;
+    transform: translateX(-50%);
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Rend l'image circulaire */
+    border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Navbar */
 .navbar {
