@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets de Loïc Darras</title>
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <script defer src="assets/js/projects.js"></script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="header-container">
+            <h1>Mes Projets GitHub</h1>
+            <p>Retrouvez mes projets en fonction du langage et du framework utilisés.</p>
+        </div>
+    </header>
+
+    <div class="back-to-home">
+    <a href="index.html" class="button">← Retour à l'accueil</a>
+</div>
+
+
+    <!-- Filtre des projets -->
+    <nav class="project-filter">
+        <label for="category">Filtrer par :</label>
+        <select id="category" onchange="filterProjects()">
+            <option value="all">Tous</option>
+                <optgroup label="Etudes">
+                <option value="BTS">BTS</option>
+                <option value="Licence">Licence pro</option>
+                 <option value="Autre">Autre</option>
+            <optgroup label="Langages">
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="htmlcss">HTML / CSS</option>
+                <option value="shell">Shell / UNIX</option>
+            </optgroup>
+            <optgroup label="Frameworks">
+                <option value="springboot">SpringBoot</option>
+                <option value="django">Django</option>
+                <option value="bootstrap">Bootstrap</option>
+                 <option value="react-native">React Native</option>
+                 <option value="angular"> Angular </option>
+
+
+            </optgroup>
+        </select>
+    </nav>
+
+    <!-- Liste des projets -->
+    <main>
+        <section id="projects-list">
+            <h2>Projets disponibles</h2>
+            <ul id="projects">
+                <!-- JavaScript -->
+                <li class="Autre project javascript">
+                    <strong>Chronomètre en JavaScript</strong>
+                    <p>Un chronomètre interactif en JavaScript.</p>
+                    <a href="https://github.com/loicD77/chronometre_js" target="_blank">Voir sur GitHub</a>
+                </li>
+                <li class="Autre project javascript">
+                    <strong>Pierre-Papier-Ciseaux en JavaScript</strong>
+                    <p> Pierre-Papier-Ciseaux en JavaScript.</p>
+                    <a href="https://github.com/loicD77/pierre-papier-ciseaux" target="_blank">Voir sur GitHub</a>
+                </li>
+                  <li class="BTS  project javascript">
+                    <strong>Pierre-Papier-Ciseaux en JavaScript</strong>
+                    <p> Pierre-Papier-Ciseaux en JavaScript.</p>
+                    <a href="https://github.com/loicD77/pierre-papier-ciseaux" target="_blank">Voir sur GitHub</a>
+                </li>
+             
+             
+
+
+                <!-- PHP -->
+                <li class="Licence project php">
+                    <strong>Planificateur de tâches annuel</strong>
+                    <p>Application de gestion des corvées avec PHP et MongoDB Atlas.</p>
+                    <a href="https://github.com/loicD77/Planificateur-de-taches-annuel-avec-MongoDB-Atlas" target="_blank">Voir sur GitHub</a>
+                </li>
+                <li class="Licence project php">
+                    <strong>PHPOVHCRUD</strong>
+                    <p>CRUD avec PHP et base de données OVH.</p>
+                    <a href="https://github.com/loicD77/PHPOVHCRUD" target="_blank">Voir sur GitHub</a>
+                </li>
+
+                <!-- Java -->
+                <li class="Licence project java">
+                    <strong>Space Invaders</strong>
+                    <p>Un jeu Space Invaders en Java.</p>
+                    <a href="https://github.com/loicD77/SPACE-INVADERS-DARRAS-LOIC-L3PRO" target="_blank">Voir sur GitHub</a>
+                </li>
+                <li class="Licence project java">
+                    <strong>RPG Textuel</strong>
+                    <p>Un jeu RPG en Java avec système de combat.</p>
+                    <a href="https://github.com/loicD77/RPGConsoleJavaL3Pro" target="_blank">Voir sur GitHub</a>
+                </li>
+                <li class=" Licence project java">
+                    <strong>Java Paint Swing</strong>
+                    <p>Un projet de dessin interactif en Java Swing.</p>
+                    <a href="https://github.com/loicD77/JavaPaintSwing" target="_blank">Voir sur GitHub</a>
+                </li>
+                 <li class=" Licence project java">
+                    <strong>JavaL3PRO-Lecteur-de-fichiers</strong>
+                    <p>Petit projet java sur la lecture de fichier (à l'endroit, ligne inversé, texte inversé) pour différents formats de texte.</p>
+                    <a href="https://github.com/loicD77/JavaPaintSwing" target="_blank">Voir sur GitHub</a>
+                </li>
+                  <li class=" Licence project java">
+                    <strong>Java-L3PRO-Bataille-de-cartes</strong>
+                    <p>Premier petit projet java retraçant la bataille issue de ma L3 Pro Projet Web et Mobile à Sorbonne Université/CFA des Sciences</p>
+                    <a href="https://github.com/loicD77/JavaPaintSwing" target="_blank">Voir sur GitHub</a>
+                </li>
+
+                <!-- Python -->
+                <li class=" Autre project  django python">
+                    <strong>Chat Django</strong>
+                    <p>Une application de chat en Django avec base de données.</p>
+                    <a href="https://github.com/loicD77/chat-Django" target="_blank">Voir sur GitHub</a>
+                </li>
+
+                <li class=" Autre project python django">
+                    <strong>Site multilingue</strong>
+                    <p>Un site utilisant python avec le framework Django pour gérer plusieurs langues.</p>
+                    <a href="https://github.com/loicD77/multilang_site" target="_blank">Voir sur GitHub</a>
+                </li>
+
+
+                <!-- HTML / CSS -->
+                <li class=" BTS project htmlcss">
+                    <strong>Site BTS 2</strong>
+                    <p>Un site web HTML/CSS réalisé durant le BTS.</p>
+                    <a href="https://github.com/loicD77/SiteBTS2_HTML-CSS" target="_blank">Voir sur GitHub</a>
+                </li>
+                <li class="Licence project htmlcss bootstrap">
+                    <strong>Responsive Site Bootstrap</strong>
+                    <p>Un site web responsive avec Bootstrap.</p>
+                    <a href="https://github.com/loicD77/responsiveHTML-CSS-Bootstrap-L3_Pro" target="_blank">Voir sur GitHub</a>
+                </li>
+
+                <!-- Shell / UNIX -->
+                <li class="Licence project shell">
+                    <strong>Compte Rendu TP1 UNIX</strong>
+                    <p>Compte-rendu détaillé des exercices UNIX.</p>
+                    <a href="https://github.com/loicD77/compte-rendu-TP1-UNIX" target="_blank">Voir sur GitHub</a>
+                </li>
+                <li class="Licence project shell">
+                    <strong>Compte Rendu TP2 UNIX</strong>
+                    <p>Deuxième rapport des TP UNIX.</p>
+                    <a href="https://github.com/loicD77/compte-rendu-TP2-UNIX" target="_blank">Voir sur GitHub</a>
+                </li>
+                  <li class="Licence project shell">
+                    <strong>Compte Rendu TP3 UNIX</strong>
+                    <p>Deuxième rapport des TP UNIX.</p>
+                    <a href="https://github.com/loicD77/compte-rendu-TP3-UNIX" target="_blank">Voir sur GitHub</a>
+                </li>
+
+                <!-- Frameworks -->
+                <li class="BTS project springboot">
+                    <strong>SpringBoot E6</strong>
+                    <p>Un projet complet sous SpringBoot.</p>
+                    <a href="https://github.com/loicD77/SpringBoot_E6" target="_blank">Voir sur GitHub</a>
+                </li>
+               
+               <!-- React Native -->
+              <li class="Licence project react-native"> 
+                <strong> 1er petit projet React Native  </strong>
+        <p> Un petit projet servant d'approche  </p>
+                  <a href="https://github.com/loicD77/react-native-math_minijeu" target="_blank">Voir sur Github</a>
+                
+            </li>
+
+
+                <!-- Angular -->
+        <li class="BTS project angular"> 
+    <strong>1er petit projet Angular</strong>
+    <p>Application de commande de sushi avec le framework Angular</p>
+    <a href="https://github.com/loicD77/sushi-app" target="_blank">Voir sur Github</a>
+</li>
+
+
+
+             <!-- Stages -->
+      <li class=" BTS project "> 
+                <strong> Stage BTS de 1ère année (Site d'agence de voyage)  </strong>
+        <p>Stage BTS de 1ère année (Site d'agence de voyage) </p>
+                  <a href="https://github.com/loicD77/react-native-math_minijeu" target="_blank">Voir sur Github</a>
+                
+            </li>
+
+                 <li class="BTS project"> 
+                <strong> Stage BTS de 2ème année (Programme python)  </strong>
+        <p> Un petit projet servant d'approche  </p>
+                  <a href="https://github.com/loicD77/react-native-math_minijeu" target="_blank">Voir sur Github</a>
+                
+            </li>
+
+
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2025 Loïc Darras. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
