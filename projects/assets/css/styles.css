@@ -1,4 +1,4 @@
-* Styles généraux */
+/* Styles généraux */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -488,7 +488,7 @@ footer {
     bottom: 0;
     width: 10px;
     height: 6px;
-    background: rgba(139, 69, 19, 0.7); /* Marron semi-transparent */
+     background: rgba(255, 105, 180, 0.6); /* 🌸 Rose hotpink semi-transparent */
     border-radius: 50%;
     opacity: 0;
     filter: blur(6px);
@@ -1223,6 +1223,9 @@ footer {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   }
 }
+
+
+
 
 
 
