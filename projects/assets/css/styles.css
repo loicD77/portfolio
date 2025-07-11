@@ -484,15 +484,17 @@ footer {
 
 /* ✅ Fumée plus fine et responsive */
 .smoke {
-    position: absolute;
-    bottom: 0;
-    width: 10px;
-    height: 6px;
-    background: radial-gradient(circle, rgba(255,182,193,0.6), rgba(255,105,180,0.3));
-    border-radius: 50%;
-    opacity: 0;
-    filter: blur(6px);
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(255,182,193,0.6), rgba(255,105,180,0.3));
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(8px);
+  mix-blend-mode: screen;
 }
+
 
 /* ✅ Plus petite tasse et fumée sur mobiles */
 @media (max-width: 768px) {
