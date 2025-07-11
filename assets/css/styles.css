@@ -567,6 +567,7 @@ footer {
 
     #about{
 
+        
         margin-top: 50px;
     }
 }
@@ -1064,17 +1065,22 @@ footer {
     z-index: 1000;
 }
 
-/* ✅ Fumée plus fine et responsive */
 .smoke {
     position: absolute;
     bottom: 0;
-    width: 10px;
-    height: 6px;
-    background: rgba(139, 69, 19, 0.7); /* Marron semi-transparent */
+    width: 20px; /* ✅ Plus large */
+    height: 20px; /* ✅ Plus haute */
+    background: radial-gradient(circle, rgba(255, 0, 150, 0.95), rgba(255, 0, 255, 0.8));
     border-radius: 50%;
     opacity: 0;
-    filter: blur(6px);
+    filter: blur(10px);
+    box-shadow:
+        0 0 20px rgba(255, 0, 200, 0.9),
+        0 0 40px rgba(255, 0, 200, 0.6),
+        0 0 60px rgba(255, 0, 200, 0.4); /* 💡 Grosse lueur rose/violette */
+    z-index: 2000;
 }
+
 
 /* ✅ Plus petite tasse et fumée sur mobiles */
 @media (max-width: 768px) {
