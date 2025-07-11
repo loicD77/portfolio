@@ -488,8 +488,8 @@ footer {
     bottom: 0;
     width: 10px;
     height: 6px;
-    background: rgba(139, 69, 19, 0.7); /* Marron semi-transparent */
-    border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,182,193,0.6), rgba(255,105,180,0.3));
+  border-radius: 50%;
     opacity: 0;
     filter: blur(6px);
 }
