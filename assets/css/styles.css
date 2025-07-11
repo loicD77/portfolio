@@ -482,17 +482,18 @@ footer {
     z-index: 1000;
 }
 
-/* ✅ Fumée plus fine et responsive */
 .smoke {
     position: absolute;
     bottom: 0;
-    width: 10px;
-    height: 6px;
-  background: radial-gradient(circle, rgba(255,182,193,0.6), rgba(255,105,180,0.3));
-  border-radius: 50%;
+    width: 12px;
+    height: 8px;
+    background: radial-gradient(circle, rgba(255, 0, 128, 0.9), rgba(255, 192, 203, 0.6), rgba(255, 255, 255, 0.2)); /* 🌸 Rose pétant */
+    border-radius: 50%;
     opacity: 0;
-    filter: blur(6px);
+    filter: blur(8px);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.8); /* Ajout d'une lueur rose */
 }
+
 
 /* ✅ Plus petite tasse et fumée sur mobiles */
 @media (max-width: 768px) {
