@@ -10,13 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         y: -50
     });
 
-    // Effet glitch lumineux
-    gsap.to(".header-title h1", {
-        textShadow: "0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px #ff0000, 0 0 40px #ff0000",
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true
-    });
+
 
     // Effet d'écriture progressive
     gsap.from(".header-title p", {
@@ -160,4 +154,5 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.warn("❌ GSAP n'est pas chargé. Vérifiez l'inclusion de la bibliothèque.");
     }
+
 });
